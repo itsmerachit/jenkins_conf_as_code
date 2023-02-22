@@ -1,0 +1,8 @@
+configuration-as-code:latest
+credentials-binding:latest
+git:latest
+github-branch-source:latest
+pipeline-github-lib:latest
+pipeline-stage-view:latest
+timestamper:latest
+ws-cleanup:latest
