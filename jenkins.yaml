@@ -5,17 +5,7 @@ jenkins:
   crumbIssuer:
     standard:
       excludeClientIPFromCrumb: false
-  disableRememberMe: false
-  labelAtoms:
-  - name: "built-in"
-  markupFormatter: "plainText"
-  mode: NORMAL
-  myViewsTabBar: "standard"
-  numExecutors: 2
-  primaryView:
-    all:
-      name: "all"
-  projectNamingStrategy: "standard"
+  
   quietPeriod: 5
   remotingSecurity:
     enabled: true
@@ -27,17 +17,11 @@ jenkins:
       users:
       - id: "admin"
         name: "admin sharma"
-        password: adminP
-        properties:
-        - "myView"
-        - "timezone"
-        - "apiToken"
+        password: ${ADMIN_PWD}
+        
   authorizationStrategy:
     loggedInUsersCanDoAnything:
       allowAnonymousRead: false
-    globalMatrix:
-      grantedPermissions:
-        - "Overall/Administer:authenticated"
   slaveAgentPort: 50000
   updateCenter:
     sites:
@@ -64,7 +48,7 @@ unclassified:
     fingerprintCleanupDisabled: false
     storage: "file"
   location:
-    adminAddress: "address not configured yet <nobody@nowhere>"
+    adminAddress: "address configured <admin@domain.com>"
     url: "http://localhost:8080/"
   pollSCM:
     pollingThreadCount: 10
@@ -80,4 +64,4 @@ credentials:
               scope:    SYSTEM
               id:       github-user
               username: test-user
-              password: dummy-password
+              password: ${ADMIN_PWD}
